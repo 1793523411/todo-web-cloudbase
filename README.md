@@ -219,6 +219,8 @@ complete(id,complete){
 
 ## 部署该应用
 
+### 方式一
+
 既然这样一个应用写好了，那我们能不能利用云开发cloudbase的静态网网站托管功能来部署我们应用呢？答案是可以的，点击左侧的静态网站托管，并点击开始使用，然后等待期初始化完成
 
 ![image-20200616122918313](https://web-sql-1301545895.cos.ap-nanjing.myqcloud.com/image-20200616122918313.png)
@@ -230,6 +232,26 @@ complete(id,complete){
 ![image-20200616123653706](https://web-sql-1301545895.cos.ap-nanjing.myqcloud.com/image-20200616123653706.png)
 
 然后点击上面的基础配置就可以看见域名信息处有一个默认域名，点击该默认域名，就可以访问到刚刚所写的应用了
+
+### 方式二
+
+除了使用上面哪种方式部署外，还有一种更简单的，那就是使用云开始提供的cli工具，需要用npm安装cloudbase/cli
+
+[具体教程参考这里](http://docs.cloudbase.net/cli/intro.html)
+
+当你安装好了这个工具并进行了登录，就可以可以通过命令行的形式来部署应用了，只需要执行一条命令（前提是在云开发控制台开通了静态网站服务）：`tcb hosting:deploy ./todo / -e envId`
+
+> todo是项目的目录名，/代表云端文件根路径
+
+最后会出现下面这样的结果
+
+
+
+![image-20200619152741345](https://web-sql-1301545895.cos.ap-nanjing.myqcloud.com/image-20200619152741345.png)
+
+到此就部署完成了，如果想要查看静态网站的状态，访问域名等信息，可以执行`tcb hosting:detail -e envId`
+
+![image-20200619153218537](https://web-sql-1301545895.cos.ap-nanjing.myqcloud.com/image-20200619153218537.png)
 
 ## 完整代码
 
